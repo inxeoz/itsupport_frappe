@@ -1,0 +1,198 @@
+{
+  "actions": [],
+  "allow_rename": 1,
+  "creation": "2025-08-15 04:06:07.905684",
+  "doctype": "DocType",
+  "engine": "InnoDB",
+  "field_order": [
+    "section_break_rdxb",
+    "amended_from",
+    "ticket_id",
+    "user_name",
+    "department",
+    "contact_email",
+    "contact_phone",
+    "title",
+    "description",
+    "category",
+    "subcategory",
+    "priority",
+    "impact",
+    "status",
+    "assignee",
+    "created_datetime",
+    "due_datetime",
+    "resolution_datetime",
+    "resolution_summary",
+    "root_cause",
+    "requester_confirmation",
+    "time_spent",
+    "attachments",
+    "tags"
+  ],
+  "fields": [
+    {
+      "fieldname": "section_break_rdxb",
+      "fieldtype": "Section Break"
+    },
+    {
+      "fieldname": "amended_from",
+      "fieldtype": "Link",
+      "label": "Amended From",
+      "no_copy": 1,
+      "options": "Ticket",
+      "print_hide": 1,
+      "read_only": 1,
+      "search_index": 1
+    },
+    {
+      "fieldname": "ticket_id",
+      "fieldtype": "Data",
+      "label": "Ticket ID",
+      "unique": 1,
+      "read_only": 1
+    },
+    {
+      "fieldname": "user_name",
+      "fieldtype": "Data",
+      "label": "User Name"
+    },
+    {
+      "fieldname": "department",
+      "fieldtype": "Link",
+      "label": "Department",
+      "options": "Department"
+    },
+    {
+      "fieldname": "contact_email",
+      "fieldtype": "Data",
+      "label": "Contact Email"
+    },
+    {
+      "fieldname": "contact_phone",
+      "fieldtype": "Data",
+      "label": "Contact Phone"
+    },
+    {
+      "fieldname": "title",
+      "fieldtype": "Data",
+      "label": "Title"
+    },
+    {
+      "fieldname": "description",
+      "fieldtype": "Text",
+      "label": "Description"
+    },
+    {
+      "fieldname": "category",
+      "fieldtype": "Select",
+      "label": "Category",
+      "options": "Hardware\nSoftware\nNetwork\nAccess Request\nOther"
+    },
+    {
+      "fieldname": "subcategory",
+      "fieldtype": "Data",
+      "label": "Subcategory"
+    },
+    {
+      "fieldname": "priority",
+      "fieldtype": "Select",
+      "label": "Priority",
+      "options": "Low\nMedium\nHigh\nCritical"
+    },
+    {
+      "fieldname": "impact",
+      "fieldtype": "Select",
+      "label": "Impact",
+      "options": "Single User\nMultiple Users\nEntire Department\nOrganization-wide"
+    },
+    {
+      "fieldname": "status",
+      "fieldtype": "Select",
+      "label": "Status",
+      "options": "New\nIn Progress\nWaiting for Info\nResolved\nClosed"
+    },
+    {
+      "fieldname": "assignee",
+      "fieldtype": "Link",
+      "label": "Assignee",
+      "options": "User"
+    },
+    {
+      "fieldname": "created_datetime",
+      "fieldtype": "Datetime",
+      "label": "Created Date/Time",
+      "read_only": 1
+    },
+    {
+      "fieldname": "due_datetime",
+      "fieldtype": "Datetime",
+      "label": "Due Date/Time"
+    },
+    {
+      "fieldname": "resolution_datetime",
+      "fieldtype": "Datetime",
+      "label": "Resolution Date/Time",
+      "read_only": 1
+    },
+    {
+      "fieldname": "resolution_summary",
+      "fieldtype": "Text",
+      "label": "Resolution Summary"
+    },
+    {
+      "fieldname": "root_cause",
+      "fieldtype": "Text",
+      "label": "Root Cause"
+    },
+    {
+      "fieldname": "requester_confirmation",
+      "fieldtype": "Select",
+      "label": "Requester Confirmation",
+      "options": "Yes\nNo"
+    },
+    {
+      "fieldname": "time_spent",
+      "fieldtype": "Float",
+      "label": "Time Spent (Hours)"
+    },
+    {
+      "fieldname": "attachments",
+      "fieldtype": "Attach",
+      "label": "Attachments"
+    },
+    {
+      "fieldname": "tags",
+      "fieldtype": "Data",
+      "label": "Tags"
+    }
+  ],
+  "grid_page_length": 50,
+  "index_web_pages_for_search": 1,
+  "is_submittable": 1,
+  "links": [],
+  "modified": "2025-08-15 04:06:07.905684",
+  "modified_by": "Administrator",
+  "module": "Itsupport Frappe",
+  "name": "Ticket",
+  "owner": "Administrator",
+  "permissions": [
+    {
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1,
+      "read": 1,
+      "report": 1,
+      "role": "System Manager",
+      "share": 1,
+      "submit": 1,
+      "write": 1
+    }
+  ],
+  "row_format": "Dynamic",
+  "sort_field": "creation",
+  "sort_order": "DESC",
+  "states": []
+}

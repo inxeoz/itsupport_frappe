@@ -22,7 +22,7 @@ frappe.pages["it_support"].on_page_load = async function (wrapper) {
   try {
     // Step 1: Build static UI from backend
     await frappe.call({
-      method: "mapp.mapp.api.dev.build_static_ui",
+      method: "itsupport_frappe.itsupport_frappe.api.dev.build_static_ui",
     });
 
     console.log("✅ Static UI build complete");
@@ -37,8 +37,10 @@ frappe.pages["it_support"].on_page_load = async function (wrapper) {
   try {
     //?v=${version}
     // Corrected path for CSS
-    // await loadCSS(`/assets/mapp/static_ui/assets/index.css`);
-    await loadCSS(`/assets/mapp/static_ui/assets/index.css?v=${version}`);
+    // await loadCSS(`/assets/itsupport_frappe/static_ui/assets/index.css`);
+    await loadCSS(
+      `/assets/itsupport_frappe/static_ui/assets/index.css?v=${version}`,
+    );
   } catch (err) {
     frappe.msgprint("❌ Failed to load CSS");
     console.error("Failed to load CSS:", err);
@@ -47,10 +49,10 @@ frappe.pages["it_support"].on_page_load = async function (wrapper) {
   try {
     //?v=${version}
     // Corrected path for JS
-    // const mod = await import(`/assets/mapp/static_ui/assets/main.js`);
+    // const mod = await import(`/assets/itsupport_frappe/static_ui/assets/main.js`);
 
     const mod = await import(
-      `/assets/mapp/static_ui/assets/main.js?v=${version}`
+      `/assets/itsupport_frappe/static_ui/assets/main.js?v=${version}`
     );
 
     // Remove loading UI

@@ -6,8 +6,8 @@ import os
 @frappe.whitelist()
 def build_static_ui():
     try:
-        app_path = frappe.get_app_path('mapp')
-        frontend_path = os.path.join(app_path, 'it_support')
+        app_path = frappe.get_app_path('itsupport_frappe')
+        frontend_path = os.path.join(app_path, 'itsupport_react')
 
         # Run build and wait until it completes
         result = subprocess.run(["npx", "vite", "build"], cwd=frontend_path, capture_output=True, text=True)

@@ -53,5 +53,4 @@ jspm_packages/
 
 # Aider AI Chat
 .aider*
-
- itsupport_frappe/public/*
+itsupport_frappe/public/*

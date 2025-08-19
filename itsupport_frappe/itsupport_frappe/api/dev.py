@@ -74,8 +74,8 @@ def needs_build(main_dir, current_dir):
     if latest_commit != last_commit:
         write_last_commit(current_dir, latest_commit)
         return "need_build"
-    return "need_build"
-    # return "skip_build"
+    # return "need_build"
+    return "skip_build"
 
 @frappe.whitelist()
 def build_static_ui():

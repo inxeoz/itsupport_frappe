@@ -1,6 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": ".####.",
  "creation": "2025-08-15 04:06:07.905684",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -60,8 +61,7 @@
   {
    "fieldname": "department",
    "fieldtype": "Data",
-   "label": "Department",
-   "options": "Department"
+   "label": "Department"
   },
   {
    "fieldname": "contact_email",
@@ -115,8 +115,7 @@
   {
    "fieldname": "assignee",
    "fieldtype": "Data",
-   "label": "Assignee",
-   "options": "User"
+   "label": "Assignee"
   },
   {
    "fieldname": "created_datetime",
@@ -171,10 +170,11 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-08-19 22:29:27.435333",
+ "modified": "2025-08-19 23:09:49.211994",
  "modified_by": "Administrator",
  "module": "Itsupport Frappe",
  "name": "Ticket",
+ "naming_rule": "By \"Naming Series\" field",
  "owner": "Administrator",
  "permissions": [
   {

@@ -1,26 +1,4 @@
 
-# import subprocess
-# import frappe
-# import os
-
-# @frappe.whitelist()
-# def build_static_ui():
-#     try:
-#         app_path = frappe.get_app_path('itsupport_frappe')
-#         frontend_path = os.path.join(app_path, 'itsupport_react')
-
-#         # Run build and wait until it completes
-#         result = subprocess.run(["npx", "vite", "build"], cwd=frontend_path, capture_output=True, text=True)
-
-#         if result.returncode == 0:
-#             return {"status": "success", "output": result.stdout}
-#         else:
-#             return {"status": "error", "message": result.stderr}
-#     except Exception as e:
-#         return {"status": "error", "message": str(e)}
-
-
-
 import subprocess
 import frappe
 import os
@@ -64,6 +42,16 @@ def needs_build(main_dir, current_dir):
         "skip_build" (if commit is same),
         "error" (if something is wrong)
     """
+
+    #if  app_path = frappe.get_app_path('itsupport_frappe')
+    # static_ui_folder = os.path.join(app_path, 'public', 'static_ui')
+    # if static_ui_folder doesnot exist then return need_build
+    #
+    app_path = frappe.get_app_path('itsupport_frappe')
+    static_ui_folder = os.path.join(app_path, 'public', 'static_ui')
+    if not os.path.exists(static_ui_folder):
+        return "need_build"
+
     latest_commit = get_latest_commit_hash(main_dir)
     if not latest_commit:
         return "error"
@@ -89,6 +77,14 @@ def build_static_ui():
         if build_status == "error":
             return {"status": "error", "message": "No commit hash found for the main directory."}
         if build_status in ("first_build", "need_build"):
+
+            result_install = subprocess.run(
+                ["npm", "i"],
+                cwd=main_dir,
+                capture_output=True,
+                text=True
+            )
+
             result = subprocess.run(
                 ["npx", "vite", "build"],
                 cwd=main_dir,

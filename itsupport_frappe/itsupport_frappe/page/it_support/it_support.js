@@ -39,12 +39,13 @@ frappe.pages["it_support"].on_page_load = async function (wrapper) {
     // Corrected path for CSS
     // await loadCSS(`/assets/itsupport_frappe/static_ui/assets/index.css`);
     await loadCSS(
-      `/assets/itsupport_frappe/static_ui/assets/index.css?v=${version}`,
+      `/assets/itsupport_frappe/static_ui/index.css?v=${version}`,
     );
   } catch (err) {
     frappe.msgprint("❌ Failed to load CSS");
     console.error("Failed to load CSS:", err);
   }
+  
 
   try {
     //?v=${version}
@@ -52,7 +53,7 @@ frappe.pages["it_support"].on_page_load = async function (wrapper) {
     // const mod = await import(`/assets/itsupport_frappe/static_ui/assets/main.js`);
 
     const mod = await import(
-      `/assets/itsupport_frappe/static_ui/assets/main.js?v=${version}`
+      `/assets/itsupport_frappe/static_ui/main.js?v=${version}`
     );
 
     // Remove loading UI
